@@ -19,6 +19,16 @@ if __name__ == "__main__":
         if(today == bday) & yearNow not in str(item['Year']):
             sendEmail(today, "Happy Birthday", item['Dialogue'])
             writeInd.append(index)
+    #print(writeInd)        
+    for i in writeInd:
+        yr = def.loc[i,"Year"]
+        df.loc[i, "Year"] = str(yr) + ','+str(yearNow)
+        #print(df.loc[i,'year'])
+        
+    
+   #print(df)
+  df.to_excel('data.xlsx', index=False)
+    
 
     
       
